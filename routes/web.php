@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('site')->name('site.')->group(function(){
-    Route::get('home',[siteController::class,'home'])->name('home');
+    Route::get('',[siteController::class,'home'])->name('home');
     Route::get('about',[siteController::class,'about'])->name('about');
     Route::get('services',[siteController::class,'services'])->name('services');
     Route::get('portfolio',[siteController::class,'portfolio'])->name('portfolio');
