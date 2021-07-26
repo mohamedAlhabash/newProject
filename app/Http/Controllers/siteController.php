@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\contactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class siteController extends Controller
 {
@@ -28,12 +30,15 @@ class siteController extends Controller
         return view('newSite.portfolio-details');
     }
     public function contactSubmit(Request $request){
+       $data= $request->except('_token');
         $request->validate([
             'name'=>'required|min:2|max:15',
             'email'=>'required',
             'subject'=>'required',
             'message'=>'required'
         ]);
+        Mail::to('admin@admin.com')->send(new contactMail($data));
+        return redirect()->route('site.contact');
     }
 
 }
