@@ -51,7 +51,7 @@
           <li><a class="nav-link scrollto {{request()->routeIs('site.home')?'active':''}}" href="{{route('site.home')}}">Home</a></li>
           <li><a class="nav-link scrollto {{request()->routeIs('site.about')?'active':''}}" href="{{route('site.about')}}">About</a></li>
           <li><a class="nav-link scrollto {{request()->routeIs('site.services')?'active':''}}" href="{{route('site.services')}}">Services</a></li>
-          <li><a class="nav-link scrollto {{request()->routeIs('site.portfolio')?'active':''}}" href="{{route('site.portfolio')}}">Portfolio</a></li>
+          <li><a class="nav-link scrollto {{request()->routeIs('site.portfolio.portfolio')?'active':(request()->routeIs('site.portfolio.portfolioDetails')?'active':'')}}" href="{{route('site.portfolio.portfolio')}}">Portfolio</a></li>
           <li><a class="nav-link scrollto {{request()->routeIs('site.team')?'active':''}}" href="{{route('site.team')}}">Team</a></li>
           <li><a class="nav-link scrollto" href="{{route('site.contact')}}">Contact</a></li>
         </ul>
